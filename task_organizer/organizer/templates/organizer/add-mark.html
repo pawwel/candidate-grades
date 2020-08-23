@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grade me!</title>
+  </head>
+  <body>
+    <div class="">
+      <h4>Create a new Grade!</h4>
+      <form class="postForm" action="{% url 'organizer:mark' %}" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Grade" class=''>
+      </form>
+    </div>
+  </body>
+</html>

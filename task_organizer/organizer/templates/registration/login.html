@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="">
+      <h2>Please Login:</h2>
+      <p>You have to be recruiter or admin to be able to login.</p>
+
+      {% if form.errors %}
+        <p>Wrong username or password! Please try again!</p>
+      {% endif %}
+
+      <form action="{% url 'login' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class='' name="" value="Login">
+      </form>
+
+    </div>
+  </body>
+</html>
